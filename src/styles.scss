@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 body{ font-size: 13px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+
+body{ font-size: 13px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   div{ border: 1px solid #1b2424;}
+} 
+ 
+  
 menu{ display: flex; list-style: none; margin: 0; padding: 0; } 
 menu li + li{  margin-left: 2px;  } 
 menu li a{ padding: 4px 12px; background-color: #6c7777; display: block; text-decoration: none; color: black;  } 

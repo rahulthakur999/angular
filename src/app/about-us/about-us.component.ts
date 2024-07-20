@@ -10,5 +10,10 @@ export class AboutUsComponent {
   public value:string= 'This is About Us Content......';
 
   data:string[]=['Ram', 'Ahyam', 'Mohan'];
+ 
+  msg: any = '';
 
+  receiveMessage(event: any) {
+    this.msg = event;
+  }
 }
