@@ -12,6 +12,7 @@ export class AdComponent {
   @Output() messageEvent = new EventEmitter<any>();
 
   //employ:any ={name: 'Bhim', edu:'MCA', org:'ABC '}
+  inputValue:string = 'test';
 
   sendMessage() {
     this.messageEvent.emit({name: 'Bhim', edu:'MCA', org:'ABC '});

@@ -6,6 +6,8 @@ describe('AdComponent', () => {
   let component: AdComponent;
   let fixture: ComponentFixture<AdComponent>;
 
+ 
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [AdComponent]

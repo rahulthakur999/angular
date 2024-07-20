@@ -1,14 +1,22 @@
 <div class="showAd">
-    Value: {{value}}
+    Value: {{inputValue}}
+
+    <br>
     <!-- <ul *ngFor="let item of myData">
       <li>{{item}}</li>
     </ul> -->
 
-    <input #myInput  type="text" value="hi">
-    <button (click)="getValue(myInput)">Go</button> >> {{data}}
+    <!-- <input #myInput  type="text" [value]="hi">
+    <button (click)="getValue(myInput)">Go</button> >> {{data}} -->
+    
 
-    <br> <br>
+    <input type="text" [(ngModel)]="inputValue">
 
-    <button (click)="sendMessage()">Send Message</button>
+    <br>
+    
+    value: {{inputValue}}
+    <br>
+
+    <!-- <button (click)="sendMessage()">Send Message</button> -->
 
 </div>
