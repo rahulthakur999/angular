@@ -9,6 +9,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AdComponent } from './ad/ad.component';
 import { GlobalService } from './services/global.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GlobalService } from './services/global.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule 
      
   ],
   providers: [GlobalService],
