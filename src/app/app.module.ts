@@ -10,6 +10,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { AdComponent } from './ad/ad.component';
 import { GlobalService } from './services/global.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     AboutUsComponent,
     ErrorPageComponent,
-    AdComponent
+    AdComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

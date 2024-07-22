@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+ 
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
  
 
 @Injectable({
@@ -12,11 +13,13 @@ export class GlobalService {
   constructor(private http: HttpClient) { }
 
   getEmployees(): Observable<any> {
-    return this.http.get<any>(`${environment.apiUrl}employees`);
+    //return this.http.get<any>(`${environment.apiUrl}employees`);
+    return this.http.get<any>(environment.apiUrl+"employees");
+
   }
 
-  sayHi() {
-    alert('hello!');
+  sayHi(name:string) {
+    alert('hello '+ name);
   }
 
   navigation: any[] = [

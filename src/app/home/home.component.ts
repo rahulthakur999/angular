@@ -25,21 +25,33 @@ export class HomeComponent  implements OnInit {
     this.getEmploy();
   }
   
- greet(){
-  this._globalServices.sayHi();
- }
+//  greet(name:any){
+//   this._globalServices.sayHi(name);
+//  }
 
+greet1 = (name:any) =>  {
+  this._globalServices.sayHi(name);
+}
 
  getEmploy(): void {
-  this._globalServices.getEmployees().subscribe(
-    response => {
-      this.employList = response;
-      console.log('this.employList', this.employList);
-    },
-    error => {
-      console.error('Error fetching data', error);
-    }
-  );
+
+this._globalServices.getEmployees().subscribe(response => {
+  
+ this.employList =  response.data;
+
+ console.log(this.employList);
+
+})
+
+  // this._globalServices.getEmployees().subscribe(
+  //   response => {
+  //     this.employList = response;
+  //     console.log('this.employList', this.employList);
+  //   },
+  //   error => {
+  //     console.error('Error fetching data', error);
+  //   }
+  // );
 }
 
 }

@@ -11,6 +11,12 @@
 <!-- <input type="text" [(ngModel)]="demoVar" > <br>
 {{demoVar}} -->
 
-<button (click)="greet()">Say HI</button>
+<!-- <button (click)="greet1('Bhim')">Say HI</button> -->
+
+<ul>
+    <li *ngFor="let emp of employList">
+        {{emp.employee_name}}
+    </li>
+</ul>
 
 
