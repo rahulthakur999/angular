@@ -15,8 +15,24 @@ export class GlobalService {
   getEmployees(): Observable<any> {
     //return this.http.get<any>(`${environment.apiUrl}employees`);
     return this.http.get<any>(environment.apiUrl+"employees");
-
   }
+
+  getAllUsers(): Observable<any> { 
+    return this.http.get<any>(`${environment.apiUrlNew}User/GetAllUser`);
+  }
+
+  getUser(id:number): Observable<any> { 
+    return this.http.get<any>(`${environment.apiUrlNew}User/GetAllSeriesByRegId/${id}`);
+  }
+
+  postData(data: any): Observable<any> {
+    const headers = new HttpHeaders({   });
+    //const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<any>(environment.apiUrl+'create', data, { headers });
+  }
+
+
+  
 
   sayHi(name:string) {
     alert('hello '+ name);

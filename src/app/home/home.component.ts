@@ -39,7 +39,7 @@ this._globalServices.getEmployees().subscribe(response => {
   
  this.employList =  response.data;
 
- console.log(this.employList);
+ //console.log(this.employList);
 
 })
 
@@ -52,6 +52,19 @@ this._globalServices.getEmployees().subscribe(response => {
   //     console.error('Error fetching data', error);
   //   }
   // );
+}
+
+createUser(){
+debugger;
+ // this._globalServices.postData({"name":"Rahul Test","salary":"2423423423","age":"23"})
+  this._globalServices.postData({"name":"Rahul Test","salary":"2423423423","age":"23"}).subscribe(response => {
+    
+    console.log('Response:', response);
+    this.getEmploy();
+  }, error => {
+    console.error('Error:', error);
+  });
+ 
 }
 
 }
