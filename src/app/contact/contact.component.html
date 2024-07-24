@@ -1,2 +1,32 @@
 <h3>Template Driven Forms</h3>
 
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" ngModel required #name="ngModel">
+      <div class="error" *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div *ngIf="name?.errors">
+          Name is required.
+        </div>
+      </div>
+      </div>
+    <div>
+      <label for="email">Role:</label>
+      <input type="text" id="text" name="job" ngModel required >
+    </div>
+    
+    <button type="submit" [disabled]="!userForm.valid">Submit</button>
+  </form>
+
+  <!-- <div *ngIf="submitted">
+    <p>Form Submitted!</p>
+    <p>Name: {{ formData.name }}</p>
+    <p>Email: {{ formData.email }}</p>
+  </div> -->
+
+  <ul>
+    <li *ngFor="let emp of userList">
+      Name  {{emp.name}},  Role  {{emp.job}}
+    </li>
+</ul>
+

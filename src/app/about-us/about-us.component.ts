@@ -41,10 +41,10 @@ export class AboutUsComponent implements OnInit {
 
 viewData(id:number){
  // User/GetAllSeriesByRegId/1
- debugger;
- this._globalServices.getUser(id).subscribe( 
+// debugger;
+ this._globalServices.getUser(1).subscribe( 
   response => {
-    debugger
+   // debugger
     this.userData = response;
     console.log('response>>>', this.userData);
   },

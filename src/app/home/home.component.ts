@@ -55,12 +55,11 @@ this._globalServices.getEmployees().subscribe(response => {
 }
 
 createUser(){
-debugger;
- // this._globalServices.postData({"name":"Rahul Test","salary":"2423423423","age":"23"})
-  this._globalServices.postData({"name":"Rahul Test","salary":"2423423423","age":"23"}).subscribe(response => {
-    
+ 
+  this._globalServices.postData({"name": "morpheus","job": "leader"}).subscribe(response => {
+    debugger;
     console.log('Response:', response);
-    this.getEmploy();
+    //this.getEmploy();
   }, error => {
     console.error('Error:', error);
   });

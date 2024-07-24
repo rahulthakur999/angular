@@ -22,13 +22,20 @@ export class GlobalService {
   }
 
   getUser(id:number): Observable<any> { 
-    return this.http.get<any>(`${environment.apiUrlNew}User/GetAllSeriesByRegId/${id}`);
+    // return this.http.get<any>(`${environment.apiUrlNew}User/GetAllSeriesByRegId/${id}`);
+    return this.http.get<any>(environment.apiUrlNew+'User/GetAllSeriesByRegId/'+id);
+
+  }
+
+
+  getUsers(): Observable<any> { 
+    return this.http.get<any>(`https://reqres.in/api/users`);
   }
 
   postData(data: any): Observable<any> {
-    const headers = new HttpHeaders({   });
-    //const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post<any>(environment.apiUrl+'create', data, { headers });
+    // const headers = new HttpHeaders({   });
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<any>('https://reqres.in/api/users', data, { headers });
   }
 
 
