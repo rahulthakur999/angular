@@ -38,6 +38,28 @@ export class GlobalService {
     return this.http.post<any>('https://reqres.in/api/users', data, { headers });
   }
 
+  loginUserApi(obj:any):Observable<any> { 
+    const headers = new HttpHeaders(
+      { 
+        'Content-Type': 'application/json',    
+      }
+    );
+    return this.http.post<any>('https://dummyjson.com/auth/login', obj, { headers });
+  }
+  
+
+
+  loginUser(obj:any):Observable<any> {
+    // const headers = new HttpHeaders({   });
+    const headers = new HttpHeaders(
+      { 
+        'Content-Type': 'application/json'     
+      }
+    );
+    return this.http.post<any>('http://api.studenttutorials.in/api/Registration/GetLoginDetails', obj, { headers });
+  }
+  
+
 
   
 
@@ -48,7 +70,8 @@ export class GlobalService {
   navigation: any[] = [
     { link: "Home", url: "/home" },
     { link: "About", url: "/aboutUs" }, 
-    { link: "Contact", url: "/contact" }
+    { link: "Contact", url: "/contact" },
+    { link: "API DATA", url: "/api-data" }
   ]
 
 

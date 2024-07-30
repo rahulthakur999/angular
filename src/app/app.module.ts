@@ -11,6 +11,7 @@ import { AdComponent } from './ad/ad.component';
 import { GlobalService } from './services/global.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactComponent } from './contact/contact.component';
+import { ApiDataComponent } from './api-data/api-data.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ContactComponent } from './contact/contact.component';
     AboutUsComponent,
     ErrorPageComponent,
     AdComponent,
-    ContactComponent
+    ContactComponent,
+    ApiDataComponent
   ],
   imports: [
     BrowserModule,
