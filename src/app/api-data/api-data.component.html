@@ -1,3 +1,55 @@
-<p>api-data works!</p>
+ <h4>Data Grid <button (click)="addUser()">Add User</button></h4>
 
-<button (click)="loginUser()">Get Data</button>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th *ngIf="isAddUser">Email</th>
+        <th>Avatar</th>
+        <th>Edit/Delete</th>
+    </tr>
+
+    <tr *ngFor="let row of data; let i=index;">
+        <td>
+           <span *ngIf="!row.isEdit">{{row.fname }} {{row.lname }}</span>  
+           <span *ngIf="row.isEdit">
+            <input type="text" [(ngModel)]="row.fname">
+            <input type="text" [(ngModel)]="row.lname">
+           </span> 
+        </td>
+        
+         <td>
+            <span *ngIf="!row.isEdit">{{row.username}}</span> 
+            <span *ngIf="row.isEdit">
+             <input type="text" [(ngModel)]="row.username">
+            </span> 
+         </td>
+
+         <td *ngIf="isAddUser">
+             
+            <span *ngIf="row.isEdit"> 
+             <input type="text" [(ngModel)]="row.email">
+            </span> 
+         </td>
+        
+
+         <td>
+            <span *ngIf="!row.isEdit">{{row.avatar}}</span> 
+            <span *ngIf="row.isEdit">
+             <input type="text" [(ngModel)]="row.avatar">
+            </span> 
+         </td>
+ 
+
+       
+        <td>
+            <button *ngIf="row.isEdit" (click)="saveRow(i)">Save</button>
+            <button *ngIf="!row.isEdit" (click)="editRow(row.id)">Edit</button>
+            <button  *ngIf="!row.isEdit" (click)="deleteRow(row.id)">Delete</button>
+        </td>
+    </tr>
+</table>
+
+<hr>
+
+{{data | json}}

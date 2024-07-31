@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GlobalService } from '../services/global.service';
 
 @Component({
@@ -6,62 +6,74 @@ import { GlobalService } from '../services/global.service';
   templateUrl: './api-data.component.html',
   styleUrls: ['./api-data.component.scss']
 })
-export class ApiDataComponent {
+export class ApiDataComponent implements OnInit{
+
+
+  data:any[]=[
+    // {name:'Rahul', age:38, org:'ABC', about:"Rahul is a good develope.", isEdit:false },
+    // {name:'Bhim', age:38, org:'ABC', about:"Rahul is a good develope.", isEdit:false },
+    // {name:'Kamal', age:38, org:'ABC', about:"Rahul is a good develope.", isEdit:false }, 
+  ]
   userData:any={};
   constructor(private _globalServices: GlobalService ){
 
   }
-
-  loginUserApi(){
-    debugger;
-    let obj={"username": "emilys",
-      "password": "emilyspass",
-      "expiresInMins": "30"  
+  ngOnInit(): void {
+    this.get()
   }
-    this._globalServices.loginUser(obj).subscribe((r)=>{
-      this.userData=r.data;
+
+  get(): void {
+
+    this._globalServices.get().subscribe(response => {
+
+      let data = response.map((r:any)=>{
+        r.isEdit=false;
+        return r;
+      })
+     this.data =  data; 
+     console.log(this.data)
+    
     })
   }
 
 
-  loginUser(){
-    //debugger;
-    let obj= 
 
-    {
-      "UserId": 0,
-      "FirstName": null,
-      "LastName": null,
-      "Name": null,
-      "Role": null,
-      "Email": "bhimsen6@gmail.com",
-      "Mobile": null,
-      "Phone": null,
-      "CurrentAddress": null,
-      "PermanentAddress": null,
-      "DistrictId": null,
-      "ZipCode": null,
-      "StateId": null,
-      "CountryId": null,
-      "Password": "@dm!n",
-      "ConfirmPassword": null,
-      "Organisation": null,
-      "CreatedBy": null,
-      "Created_On": null,
-      "UpdatedBy": null,
-      "Updated_On": null,
-      "Is_Active": false,
-      "ddlUser": null,
-      "ddlRole": null,
-      "Role_Id": 0,
-      "Id": 0,
-      "Mapping_Id": 0
-  }
-    this._globalServices.loginUser(obj).subscribe((r)=>{
-      this.userData=r.data;
-    })
+  deleteRow(i:number){
+    this.data.splice(i,1);
   }
 
+
+
+  editRow(i:number){
+    // this.data[i].isEdit=true;
+  }
+
+  saveRow(i:number){
+    // this.data[i].isEdit=false;
+    if(this.isAddUser){
+      let payload = this.data[i]
+      this._globalServices.addUser(payload).subscribe(response => {
+
+         if(response.status=='ok'){
+          this.get();
+         }
+       //console.log('>>>', response)
+      
+      })
+    }else{
+
+    }
+  }
+
+  isAddUser=false;
+  addUser(){
+    this.isAddUser=true;
+    this.data.unshift( { id:0, "fname": "", "lname": "", "username": "", "avatar": "", "isEdit": true })
+  }
+
+ 
+
+  
 
 
 }
