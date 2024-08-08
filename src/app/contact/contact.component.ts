@@ -8,46 +8,20 @@ import { GlobalService } from '../services/global.service';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
-
+  isOpen:boolean=false;
   constructor(private _globalServices: GlobalService ){
 
   }
   ngOnInit(): void {
-    this.getUser();
+     
   }
 
-  submitted = false;
-
-  formData = {
-    name: '',
-    job: '' 
-  };
-
-  userList:any[]=[];
-
-  getUser(){
-    this._globalServices.getUsers().subscribe((r)=>{
-      this.userList=r.data;
-    })
+  
+  openModel(){
+    this.isOpen=true;
   }
-
-  onSubmit(userForm: NgForm) {
-   // debugger;
-    if (userForm.valid) {
-      console.log('payload:', userForm.value);
-      this._globalServices.postData(userForm.value).subscribe(response => {
-       
-        console.log('Response:', response);
-
-        this.getUser();
-       
-      }, error => {
-        console.error('Error:', error);
-      });
-
-    }
+  closeModal(){
+    this.isOpen=false;
   }
-
-
    
 }
