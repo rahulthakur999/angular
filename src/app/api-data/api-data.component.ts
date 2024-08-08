@@ -8,12 +8,25 @@ import { GlobalService } from '../services/global.service';
 })
 export class ApiDataComponent implements OnInit{
 
+  searchText:string='';
+
+  onKeydown(event:any){
+  // console.log('searchText>>', this.searchText);
+
+  this.data = this.backup.filter((item)=>{
+    if(((item.fname).toLowerCase()).includes(this.searchText)){
+      return item;
+    }
+  });
+  }
 
   data:any[]=[
     // {name:'Rahul', age:38, org:'ABC', about:"Rahul is a good develope.", isEdit:false },
     // {name:'Bhim', age:38, org:'ABC', about:"Rahul is a good develope.", isEdit:false },
     // {name:'Kamal', age:38, org:'ABC', about:"Rahul is a good develope.", isEdit:false }, 
   ]
+  backup:any[]=[];
+
   userData:any={};
   constructor(private _globalServices: GlobalService ){
 
@@ -30,7 +43,7 @@ export class ApiDataComponent implements OnInit{
         r.isEdit=false;
         return r;
       })
-     this.data =  data; 
+     this.data = this.backup = data; 
      console.log(this.data)
     
     })
