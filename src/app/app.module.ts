@@ -12,6 +12,10 @@ import { GlobalService } from './services/global.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactComponent } from './contact/contact.component';
 import { ApiDataComponent } from './api-data/api-data.component';
+import { TopHeaderComponent } from './components/top-header/top-header.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { ApiDataComponent } from './api-data/api-data.component';
     ErrorPageComponent,
     AdComponent,
     ContactComponent,
-    ApiDataComponent
+    ApiDataComponent,
+    TopHeaderComponent,
+    HeaderComponent,
+    HeroComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
