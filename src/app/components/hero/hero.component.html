@@ -1,4 +1,5 @@
-<div class="header-carousel">
+<div class="header-carousel set-relative">
+
     <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
         <ol class="carousel-indicators">
             <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
@@ -79,7 +80,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <button class="btn btn-light w-100 py-2">Book Now</button>
+                                                <button class="btn btn-light w-100 py-2" (click)="bookNow()">Book Now</button>
                                             </div>
                                         </div>
                                     </form>
@@ -168,7 +169,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <button class="btn btn-light w-100 py-2">Book Now</button>
+                                                <button class="btn btn-light w-100 py-2" (click)="bookNow()">Book Now 121</button>
                                             </div>
                                         </div>
                                     </form>
@@ -186,4 +187,5 @@
             </div>
         </div>
     </div>
+    <app-loader *ngIf="openLoader"></app-loader>
 </div>

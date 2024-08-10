@@ -16,6 +16,7 @@ import { TopHeaderComponent } from './components/top-header/top-header.component
 import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterComponent } from './components/footer/footer.component';
     TopHeaderComponent,
     HeaderComponent,
     HeroComponent,
-    FooterComponent
+    FooterComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
