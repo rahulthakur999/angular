@@ -2,13 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
  
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
  
 
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalService {
+  // private myData = new BehaviorSubject<string>('hi');
+
+  public myData=new BehaviorSubject('Hi');
 
   constructor(private http: HttpClient) { }
 

@@ -1,4 +1,9 @@
 <div class="showAd">
+
+
+  >>>>> {{data}}
+
+  <br>
     Value: {{inputValue}}
 
     <br>
@@ -10,7 +15,8 @@
     <button (click)="getValue(myInput)">Go</button> >> {{data}} -->
     
 
-    <input type="text" [(ngModel)]="inputValue">
+    <input type="text" [(ngModel)]="data" (keydown)="function()">
+    <button (click)="sendData()">Send</button>
 
     <br>
     
