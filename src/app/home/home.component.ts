@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { GlobalService } from '../services/global.service';
  
 
@@ -7,7 +7,7 @@ import { GlobalService } from '../services/global.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent  implements OnInit {
+export class HomeComponent  implements OnInit, AfterViewInit, OnDestroy {
   public color = 'red';
   public bgColor:string = '#CCC'
   public value:string= 'This is Home Content';
@@ -20,8 +20,27 @@ export class HomeComponent  implements OnInit {
  constructor(private _globalServices: GlobalService ){
 
  }
+
+  ngOnDestroy(): void {
+   // debugger
+    // alert('I am NG ON Destory');
+    // console.log('I am NG ON Destory')
+    this.event.clear();
+  }
+  
+  ngAfterViewInit(): void {
+    
+  }
  
+  event:any;
+  num:number=0;
   ngOnInit(): void {
+
+    this.event = setInterval(() => {
+      this.num=this.num+1;
+      console.log(this.num);
+    }, 1000);
+
     this.getEmploy();
   }
   

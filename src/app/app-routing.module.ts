@@ -12,6 +12,10 @@ const routes: Routes = [
   { path: 'aboutUs', component: AboutUsComponent  },
   { path: 'contact', component: ContactComponent  },
   { path: 'api-data', component: ApiDataComponent  },
+  {
+    path: 'javascript',
+    loadChildren: () => import('./javascript/javascript/javascript.module').then(m => m.JavascriptModule)
+  },
   { path: '**', component: ErrorPageComponent }, 
   
 ];

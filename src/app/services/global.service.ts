@@ -11,7 +11,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class GlobalService {
   // private myData = new BehaviorSubject<string>('hi');
 
-  public myData=new BehaviorSubject('Hi');
+  public myData=new BehaviorSubject('HI');
 
   constructor(private http: HttpClient) { }
 

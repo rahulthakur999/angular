@@ -18,6 +18,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoaderComponent } from './components/loader/loader.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { LoaderComponent } from './components/loader/loader.component';
     HeaderComponent,
     HeroComponent,
     FooterComponent,
-    LoaderComponent
+    LoaderComponent, 
+    AdComponent
   ],
   imports: [
     BrowserModule,
