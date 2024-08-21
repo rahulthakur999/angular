@@ -29,6 +29,30 @@
       </div>
 
 
+      <div class="form-control">
+        <label for="name">Email:</label>
+
+
+        <input
+        type="email"
+        class="form-control"
+        name="email"
+        [(ngModel)]="user.email"
+        required
+         email
+        #email="ngModel"
+        [ngClass]="{ 'is-invalid': email.touched && email.errors }"
+      /> 
+       
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert-msg">
+          <div *ngIf="email.errors?.['required']">Email is required.</div>
+          <div *ngIf="email.errors?.['email']">Email is not Valid.</div>
+      </div>
+
+
+    </div>
+
+
      
  
       
