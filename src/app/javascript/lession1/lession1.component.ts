@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class Lession1Component {
 
+  user = {
+    name: '',
+    email: ''
+  };
+
+  onSubmit() {
+    // Handle form submission here
+    console.log(this.user);
+  }
+
 }

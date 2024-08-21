@@ -1,1 +1,38 @@
-<p>lession1 works!</p>
+<p>Template Driven Form</p>
+
+<div class="container">
+    <h2>Template Driven Form with Validation Example</h2>
+
+    <form  name="form"
+     #myForm="ngForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="name">Name:</label>
+
+
+          <input
+          type="text"
+          class="form-control"
+          name="name"
+          [(ngModel)]="user.name"
+          required
+          minlength="3"
+          #name="ngModel"
+          [ngClass]="{ 'is-invalid': myForm.submitted && name.errors }"
+        />
+
+         
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert-msg">
+            <div *ngIf="name.errors?.['required']">Name is required.</div>
+            <div *ngIf="name.errors?.['minlength']">Name is too sort</div>
+        </div>
+
+
+      </div>
+
+
+     
+ 
+      
+        <button type="submit" [disabled]="myForm.invalid">Submit</button>
+      </form>
+</div>
