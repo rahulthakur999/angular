@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { JavascriptRoutingModule } from './javascript-routing.module';
 import { Lession1Component } from '../lession1/lession1.component';
@@ -15,7 +16,8 @@ import { Lession2Component } from '../lession2/lession2.component';
   imports: [
     CommonModule,
     JavascriptRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class JavascriptModule { }
