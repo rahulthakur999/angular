@@ -1,0 +1,8 @@
+<menu class="menu">
+    <li     *ngFor="let item of list">
+        <a routerLink="{{item.id}}"> 
+        {{item.name}}
+    </a>
+    </li>
+</menu>
+<router-outlet></router-outlet>

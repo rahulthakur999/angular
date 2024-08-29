@@ -4,14 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { JavascriptRoutingModule } from './javascript-routing.module';
-import { Lession1Component } from '../lession1/lession1.component';
-import { Lession2Component } from '../lession2/lession2.component';
+import { Lession1Component } from '../lession1/lession1.component'; 
+import { JavascriptComponent } from './javascript.component';
 
 
 @NgModule({
   declarations: [
-    Lession1Component,
-    Lession2Component
+    Lession1Component, 
+    JavascriptComponent
   ],
   imports: [
     CommonModule,
