@@ -26,7 +26,7 @@ export class Lession1Component {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => { 
-      const id = params['id'];
+      const id = params['bhim'];
       console.log(id);
 
      

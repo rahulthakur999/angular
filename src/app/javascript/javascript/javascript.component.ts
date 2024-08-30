@@ -16,4 +16,6 @@ export class JavascriptComponent {
     {id:6, name:'Class 06', link:'class01', data:'This is Class 5 Content'},
   ]
 
+  
+
 }
