@@ -18,6 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     HeroComponent,
     FooterComponent,
     LoaderComponent, 
-    AdComponent
+    AdComponent, LoginComponent
   ],
   imports: [
     BrowserModule,
